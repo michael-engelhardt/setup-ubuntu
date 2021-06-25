@@ -26,23 +26,19 @@ chmod +x setupubuntu.sh
 
 ### Setup SSH Authentication
 
-**On your local Machine** generate an SSH Key and push it via SSH to your server. You will have to do this for your root and your new user.
+**On your local Machine** generate an SSH Key and push it via SSH to your server.
 
-#### Use Powershell:
+**Use Powershell**
+
+#### Generate a Key Pair
+If you're using Windows, go to C:\Users\YourUser\.ssh and:
 ```powershell
 ssh-keygen
 ```
+Leave the name as is and set a passphrase.
 
-#### Transfer to Root
-Change the IP and the also name of the SSH-Key if needed.
-```powershell
-cat ~/.ssh/id_rsa.pub | ssh root@your_server_ip "mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && chmod -R go= ~/.ssh && cat >> ~/.ssh/authorized_keys"
-
-```
-
-Change the IP
-#### Repeat for your sudo user
-Change the IP, the username and the also name of the SSH-Key if needed.
+#### Transfer to your user
+Change the IP and the username.
 ```powershell
 cat ~/.ssh/id_rsa.pub | ssh username@your_server_ip "mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && chmod -R go= ~/.ssh && cat >> ~/.ssh/authorized_keys"
 
@@ -71,3 +67,5 @@ Press `Ctrl + X` then `y` then `Enter`
 ```bash
 sudo systemctl restart ssh
 ```
+
+Now test if it works before you close your Terminal!
