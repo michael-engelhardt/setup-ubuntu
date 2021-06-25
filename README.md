@@ -51,7 +51,7 @@ cat ~/.ssh/id_rsa.pub | ssh username@your_server_ip "mkdir -p ~/.ssh && touch ~/
 ssh username@your_server_ip
 ```
 
-##### Disable Password Authentication
+##### Disable Password Authentication 
 ```bash
 sudo nano /etc/ssh/sshd_config
 ```
