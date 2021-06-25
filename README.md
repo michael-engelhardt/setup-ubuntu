@@ -69,3 +69,5 @@ sudo systemctl restart ssh
 ```
 
 Now test if it works before you close your Terminal!
+
+Consider Also to change the `PermitRootLogin` to `no` inside the `/etc/ssh/sshd_config` file, to add more security.
